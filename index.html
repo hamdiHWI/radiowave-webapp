@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RadioWave - Web Radio Player</title>
+    <meta name="description" content="Modern web radio player with Telegram integration">
+    <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="pragma" content="no-cache">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <i class="fas fa-broadcast-tower"></i>
+            <h1>RadioWave</h1>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="player-controls">
+            <button id="playBtn" class="control-btn">
+                <i class="fas fa-play"></i>
+            </button>
+            <button id="prevBtn" class="control-btn">
+                <i class="fas fa-step-backward"></i>
+            </button>
+            <button id="nextBtn" class="control-btn">
+                <i class="fas fa-step-forward"></i>
+            </button>
+        </div>
+
+        <div id="nowPlaying"></div>
+        <div class="channel-list" id="channelList"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
