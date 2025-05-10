@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RadioWave - Modern Web Radio</title>
+    <meta name="description" content="Advanced web radio app with favorites, sleep timer, and more">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="logo">
+            <i class="fas fa-broadcast-tower"></i>
+            <h1>RadioWave</h1>
+        </div>
+
+        <div class="player-info">
+            <div class="now-playing">NOW PLAYING</div>
+            <div id="currentChannel" class="current-channel">Select a station</div>
+        </div>
+
+        <div class="player-controls">
+            <div class="player-buttons">
+                <button id="prevBtn" class="player-btn" title="Previous">
+                    <i class="fas fa-step-backward"></i>
+                </button>
+                <button id="playBtn" class="player-btn" title="Play">
+                    <i class="fas fa-play"></i>
+                </button>
+                <button id="pauseBtn" class="player-btn" style="display: none;" title="Pause">
+                    <i class="fas fa-pause"></i>
+                </button>
+                <button id="nextBtn" class="player-btn" title="Next">
+                    <i class="fas fa-step-forward"></i>
+                </button>
+            </div>
+            <div class="volume-control">
+                <button id="muteBtn" class="player-btn" title="Mute">
+                    <i class="fas fa-volume-up"></i>
+                </button>
+                <input type="range" id="volumeSlider" class="volume-slider" min="0" max="1" step="0.1" value="0.7">
+            </div>
+        </div>
+
+        <div class="app-controls">
+            <button id="quickAccessBtn" class="control-btn">
+                <i class="fas fa-list"></i> Quick Access
+            </button>
+            <button id="sleepTimerBtn" class="control-btn">
+                <i class="fas fa-clock"></i> Sleep Timer
+            </button>
+            <button id="addChannelBtn" class="control-btn">
+                <i class="fas fa-plus"></i> Add Station
+            </button>
+            <button id="manageBtn" class="control-btn">
+                <i class="fas fa-cog"></i> Manage
+            </button>
+            <button id="themeToggle" class="theme-toggle" title="Toggle Theme">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="tabs">
+            <div class="tab active" data-tab="all">All Stations</div>
+            <div class="tab" data-tab="favorites">Favorites</div>
+            <div class="tab" data-tab="recent">Recently Played</div>
+        </div>
+
+        <div class="search-container">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" id="searchInput" class="search-input" placeholder="Search stations...">
+        </div>
+
+        <div class="channel-list" id="channelList">
+            <!-- Channels will be loaded here -->
+        </div>
+
+        <div id="emptyState" class="empty-state" style="display: none;">
+            <i class="fas fa-broadcast-tower"></i>
+            <h3>No stations found</h3>
+            <p>Add your favorite radio stations to get started</p>
+            <button id="addFirstChannelBtn" class="btn btn-primary">
+                <i class="fas fa-plus"></i> Add First Station
+            </button>
+        </div>
+    </div>
+
+    <!-- Popups -->
+    <div class="popup-overlay" id="quickAccessPopup">
+        <div class="popup quick-access-popup">
+            <div class="popup-header">
+                <h3 class="popup-title">Quick Access</h3>
+                <button class="popup-close">&times;</button>
+            </div>
+            <div class="popup-body">
+                <div class="channel-list" id="quickAccessList"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Other popups (channel form, sleep timer, manage) -->
+    <!-- ... -->
+
+    <script src="script.js"></script>
+</body>
+</html>
