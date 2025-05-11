@@ -3,8 +3,7 @@
  
 A sleek, feature-rich web radio player created by **Hamdi H. Uriemi**
 
-[![Facebook Contact (https://www.facebook.com/hamdi.ouirimmi)
-
+ 
 ## Features ✨
 - 📻 Stream unlimited radio stations
 - ❤️ Save favorites with one click
